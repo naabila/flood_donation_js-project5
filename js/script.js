@@ -61,8 +61,69 @@ function history(inputNumber,title){
     
     console.log(historyCard)
 }
+//common function for donation
+function donation(blance,donateAmount,donateInputAmnt,region){
+    let balance=parseFloat(getInnerTextById(blance));
+    let donationAmount=parseFloat(getInnerTextById(donateAmount));
+    let title=getInnerTextById(region);
+    let donationInput=getInputValById(donateInputAmnt);
+    //validation
+    if(isNaN(donationInput)){
+        alert('Invalid donation Amount');
+        getId(donateInputAmnt).value="";
+        return
+    
+    }else if(donationInput<= 0){
+        alert("donation amount can't be negetive or 0");
+        getId(donateInputAmnt).value=""
+        return
+    }
+    if(donationInput>balance){
+        alert("Insufficient balance for this donation");
+        getId(donateInputAmnt).value=""
+        return
+       
+    }else{
+        modal.showModal();
+        closeModal.addEventListener('click', function() {
+            modal.close();
+        });
+        getId(donateInputAmnt).value=""
+    }
+    //balance amount in card
+    let newDonationAmount=donationAmount+donationInput;
+    getId(donateAmount).innerText=`${newDonationAmount} BDT`;
+    //update balance
+    let newBalance=balance-donationInput;
+    if(newBalance<=0){
+        alert("Insufficient balance for this donation")
+        return
+    }else{
+     getId(blance).innerText=`${newBalance} BDT`
+    console.log(newBalance, typeof balance)
+    }
+    getId(blance).innerText=`${newBalance} BDT`
+    
+
+//History
+  history(donationInput,title)
+}
+//Calling donation Function For noakhali
+getId('donateForNoakhali').addEventListener('click',function(){
+    donation('balance','donation-amount-noakhali','donationInputNoakhali','noakhali')
+})
+
+//Calling donation Function For for Feni
+getId('donateForFeni').addEventListener('click',function(){
+    donation('balance','donation-amount-feni','donationInputFeni','feni')
+})
+//Calling donation Function For for Quota Protest
+getId('donateForQuota').addEventListener('click',function(){
+    donation('balance','donation-amount-quota','donationInputQuota','quota')
+})
 
 //donation functionality Noakhali
+/*
 getId('donateForNoakhali').addEventListener('click',function(){
     let balance=parseFloat(getInnerTextById('balance'));
     let donationAmountNoakhali=parseFloat(getInnerTextById("donation-amount-noakhali"));
@@ -111,3 +172,4 @@ getId('donateForNoakhali').addEventListener('click',function(){
     
     
 })
+*/

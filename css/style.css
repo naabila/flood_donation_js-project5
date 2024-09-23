@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lexend", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+h1,h2,h3,h4,h5{
+    color: #111111;
+    font-weight: 700;
+}
+img{
+    max-width: 100%;
+}
+p{
+    font-size: 16px;
+    color: #111111;
+    opacity: 70%;
+}
+footer{
+    margin-top: auto;
+}
+
+

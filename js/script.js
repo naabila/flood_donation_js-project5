@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded",function(){
         button.onclick=function(){
             window.location.href='blog.html'
         }
-    }else if(currentPage.includes('blog.html')){
+    }else if(currentPage.includes('blog.html') || currentPage === '/' || currentPage === '/flood_donation_js-project5/'){
         button.textContent="Home";
         button.onclick=function(){
             window.location.href='index.html'

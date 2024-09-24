@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded",function(){
             window.location.href='index.html'
         }
     }
+    console.log('toggle')
 })
 
 //history section function
@@ -50,7 +51,7 @@ function history(inputNumber,title){
              
         <div class="card-content">
            <h2 class="font-bold text-xl mb-2">${inputNumber} taka ${title}</h2>
-           <p>Date: ${new Date().toDateString()}</p>
+           <p>Date: ${new Date().toString()}</p>
         </div>
         </div>
     `;
@@ -123,6 +124,30 @@ getId('donateForQuota').addEventListener('click',function(){
 })
 
 //toggle between donation and history btn 
-// const donationBtn=
-// const historyBtn=
+const donationBtn=getId('donation-btn');
+const historyBtn= getId('history-btn');
+historyBtn.addEventListener('click',function(){
+getId('history-section').classList.remove('hidden');
+getId('donation-section').classList.add('hidden');
+//styling
+historyBtn.classList.add("bg-[#B4F461]");
+historyBtn.classList.remove('opacity-[70%]', 'border-[1px]', 'border-slate-300');
+donationBtn.classList.remove("bg-[#B4F461]");
+donationBtn.classList.add('opacity-[70%]', 'border-[1px]', 'border-slate-300');
+})
+
+//donationBtn
+donationBtn.addEventListener('click',function(){
+    getId('donation-section').classList.remove('hidden');
+    getId('history-section').classList.add('hidden');
+
+//styling
+donationBtn.classList.add("bg-[#B4F461]");
+donationBtn.classList.remove('opacity-[70%]', 'border-[1px]', 'border-slate-300');
+historyBtn.classList.remove("bg-[#B4F461]");
+historyBtn.classList.add('opacity-[70%]', 'border-[1px]', 'border-slate-300');
+})
+
+
+
 

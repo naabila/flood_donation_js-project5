@@ -50,7 +50,7 @@ function history(inputNumber,title){
     <div class="card my-3 border px-5 py-8">
              
         <div class="card-content">
-           <h2 class="font-bold text-xl mb-2">${inputNumber} taka ${title}</h2>
+           <h2 class="font-bold text-xl mb-2">${inputNumber} taka donated for ${title}</h2>
            <p>Date: ${new Date().toString()}</p>
         </div>
         </div>

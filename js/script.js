@@ -21,7 +21,7 @@ const closeModal = getId('closeModal');
 
 //toggle page
 window.onload=function(){
-    const button=getId('toggleButton');
+    const button = document.getElementById('toggleButton');;
     const currentPage=window.location.pathname;
     
     if(currentPage.includes('index.html')){

@@ -20,10 +20,9 @@ const closeModal = getId('closeModal');
 
 
 //toggle page
-window.onload=function(){
-    const button = document.getElementById('toggleButton');;
+document.addEventListener("DOMContentLoaded",function(){
+    const button = getId('toggleButton');
     const currentPage=window.location.pathname;
-    
     if(currentPage.includes('index.html')){
         button.textContent="Blog";
         button.onclick=function(){
@@ -35,7 +34,8 @@ window.onload=function(){
             window.location.href='index.html'
         }
     }
-}
+})
+
 //history section function
 function history(inputNumber,title){
     let historySection=getId('history-section');
@@ -121,4 +121,8 @@ getId('donateForFeni').addEventListener('click',function(){
 getId('donateForQuota').addEventListener('click',function(){
     donation('balance','donation-amount-quota','donationInputQuota','quota')
 })
+
+//toggle between donation and history btn 
+// const donationBtn=
+// const historyBtn=
 

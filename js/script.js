@@ -23,7 +23,7 @@ const closeModal = getId('closeModal');
 document.addEventListener("DOMContentLoaded",function(){
     const button = getId('toggleButton');
     const currentPage=window.location.pathname;
-    if(currentPage.includes('index.html')){
+    if(currentPage.includes('index.html') || currentPage === '/' || currentPage === '/flood_donation_js-project5/'){
         button.textContent="Blog";
         button.onclick=function(){
             window.location.href='blog.html'

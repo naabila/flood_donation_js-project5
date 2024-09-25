@@ -17,7 +17,18 @@ function setInnerTextById(id, value) {
 //modal===========
 const modal = getId('my_modal_5');
 const closeModal = getId('closeModal');
-
+//sticky header
+window.addEventListener('scroll', function() {
+    const header = getId('header');
+    const nav=getId('nav');
+    if (window.scrollY > 0) {
+      header.classList.add('backdrop-blur-md', 'bg-white/30');
+      nav.classList.add('bg-[#F9F7F3]/20')
+    } else {
+      header.classList.remove('backdrop-blur-md', 'bg-white/30');
+      nav.classList.remove('bg-[#F9F7F3]/20')
+    }
+  });
 
 //toggle page
 document.addEventListener("DOMContentLoaded",function(){
@@ -41,7 +52,7 @@ document.addEventListener("DOMContentLoaded",function(){
 function history(inputNumber,title){
     let historySection=getId('history-section');
     let historyEntries = historySection.children;
-    if (historyEntries.length >= 4) {
+    if (historyEntries.length >= 6) {
         historySection.removeChild(historyEntries[0]);
     }
     let historyCard=document.createElement('div');
